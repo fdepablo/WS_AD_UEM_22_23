@@ -17,7 +17,7 @@ public class _06_Borrar {
 			
 			String sql = "DELETE FROM PERSONAS WHERE ID=?"; 
 			
-			int id = 7;
+			int id = 1;
 			
 			System.out.println("Se va a ejecutar la siguiente sentencia SQL:");
 			System.out.println(sql);

@@ -16,7 +16,7 @@ public class _04_Obtener {
 		// Paso 2: Interactuar con la BD 
 		try (Connection con = DriverManager.getConnection(cadenaConexion, user, pass)){
 			PreparedStatement sentencia = con.prepareStatement("SELECT * FROM PERSONAS WHERE ID=?");
-			sentencia.setInt(1, 6);
+			sentencia.setInt(1, 2);
 			ResultSet rs = sentencia.executeQuery();
 			while (rs.next()) {
 				System.out.print(rs.getInt("ID"));

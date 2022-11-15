@@ -20,7 +20,7 @@ public class _05_Modificar {
 			String nombre = "Dumbeldor";
 			int edad = 600;
 			double peso = 89.7;
-			int id = 6;
+			int id = 1;
 			
 			System.out.println("Se va a ejecutar la siguiente sentencia SQL:");
 			System.out.println(sql);

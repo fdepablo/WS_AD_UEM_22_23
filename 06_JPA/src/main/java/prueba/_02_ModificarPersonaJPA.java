@@ -20,10 +20,10 @@ public class _02_ModificarPersonaJPA {
 		
 		EntityTransaction et = em.getTransaction();
 		et.begin();
-		em.merge(persona);
-		em.merge(persona);
-		persona.setNombre("Tomas de huelva");
-		em.merge(persona);
+		Persona pManaged = em.merge(persona);
+		System.out.println(em.contains(persona));
+		System.out.println(em.contains(pManaged));
+		//em.detach(pManaged);
 		et.commit();
 		
 		em.close();

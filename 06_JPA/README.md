@@ -147,7 +147,7 @@ Hay que tener cuidado con su utilización, porque el objeto que se pasa como par
 
     ID	|NOMBRE	|DIR	|TEL
     ------------------------
-    1		|a		|b	|c	
+    1	|a	|b	|c	
 
 Ejecutamos el siguiente Código
 
@@ -166,7 +166,9 @@ Ver el ejemplo _02_ModificarPersonaJPA
 
 ### Find para buscar entidades
 
-Mediante el método find() el entity manager buscar� esa entidad en la base de datos y devolverá la instancia buscada. La entidad devuelta será una entidad gestionada que existirá en el contexto de persistencia actual asociado al entity manager.
+Mediante el método find() el entity manager buscar� esa entidad en el contexto de persistencia y devolverá la instancia buscada. 
+
+En caso de que no exista, la irá a buscar a la BBDD. La entidad devuelta será una entidad gestionada que existirá en el contexto de persistencia actual asociado al entity manager.
 
 En el caso en que no existiera ninguna entidad con ese identificador, se devolverá simplemente null.
 

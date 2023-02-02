@@ -8,7 +8,7 @@
 			<!-- Tenemos una seríe de parametros minimos que decirle a JPA para que se pueda
 			contectar a la BBDD -->
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa_personas"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa_persona"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
 			<!-- 
 			Podemos poner los sigueintes parametros a la action de la generacion de la base

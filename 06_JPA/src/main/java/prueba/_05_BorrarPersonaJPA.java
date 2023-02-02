@@ -26,6 +26,7 @@ public class _05_BorrarPersonaJPA {
 		EntityTransaction et = em.getTransaction();
 		et.begin();
 		em.remove(persona);//borramos la persona con el id que le hayamos dado y teniendola cacheada en el "em"
+		//em.detach(persona);
 		et.commit();
 		
 		System.out.println("Persona borrada");

@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.List;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -24,6 +26,9 @@ public class Application {
 		
 		Persona p2 = dao.findById(1).get();
 		System.out.println(p2);
+		
+		List<Persona> lista = dao.findByNombre("Asterix");
+		System.out.println(lista);
 	}
 
 }

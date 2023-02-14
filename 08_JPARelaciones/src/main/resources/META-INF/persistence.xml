@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="PruebaJPARelaciones" transaction-type="RESOURCE_LOCAL">
+		<!-- Decimos a JPA cuales son las clases con las que tiene que trabajar -->
+		<class>modelo.entidad.Cliente</class>
+		<class>modelo.entidad.Comercial</class>
+		<class>modelo.entidad.DatosBancarios</class>
+		<class>modelo.entidad.Pedido</class>
+		<class>modelo.entidad.Direccion</class>
+		
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa_relaciones"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<!-- 
+			Podemos poner los sigueintes parametros a la action de la generacion de la base
+			de datos:
+			create -> si queremos crear la bbdd cada vez que arranquemos la aplicacion.
+			drop-and-create -> cada vez que arranquemos la app se borraran y crearan las 
+			tablas desde cero.
+			update -> para solamente refrescar las tablas en caso de cambios de anotaciones
+			 -->
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+						 
+			<!-- Mostrar trazas de sql y establecer dialecto con hibernate -->
+			<property name = "hibernate.show_sql" value = "true" />
+			<property name = "hibernate.dialect" value = "org.hibernate.dialect.MySQL8Dialect" />
+			
+			<!-- Mostrar trazas sql con eclipselink 
+			<property name="eclipselink.logging.level.sql" value="FINE" />
+			<property name="eclipselink.logging.parameters" value="true" />
+			-->
+		</properties>
+	</persistence-unit>
+</persistence>

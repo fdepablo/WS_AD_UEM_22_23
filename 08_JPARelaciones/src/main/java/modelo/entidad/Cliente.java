@@ -28,15 +28,15 @@ public class Cliente {
 	private String telefono;
 	
 	/*
-	 * Esta anotación está colocada delante del atributo fecha para 
-	 * indicar cómo debe ser convertido el campo FECHA de la base de 
+	 * Esta anotaciï¿½n estï¿½ colocada delante del atributo fecha para 
+	 * indicar cï¿½mo debe ser convertido el campo FECHA de la base de 
 	 * datos a el atributo fecha esta clase
 	 * Admite uno de los siguientes argumentos:
 	  @Temporal(TemporalType.DATE)
-		Ignora la hora, quedando el campo acotado sólo a la fecha.
+		Ignora la hora, quedando el campo acotado sï¿½lo a la fecha.
 		Ej: 2021-02-07
       @Temporal(TemporalType.TIME)
-		Ignora la fecha, quedando el campo acotado sólo a la hora.
+		Ignora la fecha, quedando el campo acotado sï¿½lo a la hora.
 		Ej: 20:44:34
 	  @Temporal(TemporalType.TIMESTAMP)
 		Tiene en cuanta la fecha y la hora.
@@ -63,13 +63,13 @@ public class Cliente {
 	//	es el que veremos en estos ejemplos
 		
 	// @OneToOne es la anotacion que debemos de colocar en el atributo que
-	// queremos hacer relación "uno a uno", solo es obligatorio ponerlo en una de las 
+	// queremos hacer relaciï¿½n "uno a uno", solo es obligatorio ponerlo en una de las 
 	// dos clases, pero si lo ponemos en las dos hacemos la relacion bidireccional, 
 	// es decir, ambas entidades se ven. 
 	
 	// Solo es obligario ponerla en el lado que tenga la foreign Key (FK) en caso de hacerlo
 	// unidireccional. Si la hacemos bidireccional, entonces debemos poner @OneToOne
-	// en ambas clases, y especificar quien tiene la FK con la anotación @JoinColumn
+	// en ambas clases, y especificar quien tiene la FK con la anotaciï¿½n @JoinColumn
 	// (ver la clase Datos Bancarios)
 	
 	// Argumentos de @OneToOne (aplicables a otro tipo de relaciones):
@@ -77,14 +77,14 @@ public class Cliente {
 	//		a los cuales estamos referenciado desde este objeto. Es optativo,
 	//		pero a tener muy en cuenta en caso de que queramos que al guardar
 	//		un objeto, se guarde tambien los objetos a los cuales estemos referenciando
-	//		Tenemos varios tipos de cascades, los más comunes:
+	//		Tenemos varios tipos de cascades, los mï¿½s comunes:
 	
 	//   	1- CascadeType.ALL, siempre que hagamos cualquier accion
 	// 		sobre un cliente, reaccionamos de igual manera con 
 	// 		sus datos bancarios, por ejemplo si borramos un cliente
 	// 		borramos sus datos bancarios asociados, si damos de alta
 	// 		un cliente, daremos tambien de alta sus datos bancarios 
-	//		asociados. (Este caso será en nuestro ejemplo)
+	//		asociados. (Este caso serï¿½ en nuestro ejemplo)
 
 	// 		2- CascadeType.PERSIST, solo en caso de que demos de alta un cliente
 	//		daremos de alta sus datos bancarios
@@ -108,7 +108,7 @@ public class Cliente {
 	
 	// Este cascade hace que cuando demos de alta o baja un cliente, lo hagamos
 	// tambien de sus pedidos asociados. OJO! con esto porque podemos perder
-	// información de pedidos.
+	// informaciï¿½n de pedidos.
 	@OneToMany(mappedBy="cliente", cascade=CascadeType.ALL) 
 	private List<Pedido> pedidos;
 	
@@ -117,10 +117,10 @@ public class Cliente {
 	// En este tipo de relaciones se nos creara una tabla intermedia automacticamente
 	// con las FK a las PK de las otras tablas.
 	// Es una relacion que muchas veces es mejor crear una entidad nueva intermedia
-	// y hacer relaciones 1 a N y N a 1 con esa entidad nueva creada, porque así
+	// y hacer relaciones 1 a N y N a 1 con esa entidad nueva creada, porque asï¿½
 	// podemos crear esa tabla intermedia a nuestro gusto, con los atributos
 	// que queramos. 
-	// Si hacemos una relación ManyToMany se nos creara esta tabla intermedia, 
+	// Si hacemos una relaciï¿½n ManyToMany se nos creara esta tabla intermedia, 
 	// pero no podremos modificar sus campos.
 
 	// OJO! CascadeType.ALL es PELIGROSISIMO, ya que 

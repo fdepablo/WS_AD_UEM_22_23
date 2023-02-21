@@ -64,7 +64,7 @@ public class _02_Consultas_Ampliadas {
 		System.out.println("==== listado de clientes con telefono 555====");
 		listarClientes(list);
 				
-		System.out.println("===================================");
+		System.out.println("================FIRST MAX===================");
 		query = em.createQuery("SELECT cli FROM Cliente cli");
 		query.setFirstResult(0);//ojo, el id 1 es el primero
 		query.setMaxResults(3);//ojo, el máximo numero de resultados
